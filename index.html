@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
 
@@ -24,67 +24,72 @@
     }
 
     body{
-      background:#eee6dc;
-      color:#2b211c;
+      background:#eee7df;
+      color:#2c211b;
       font-family:"DM Sans", sans-serif;
       overflow-x:hidden;
     }
 
     a{
-      text-decoration:none;
       color:inherit;
+      text-decoration:none;
     }
 
+    img{
+      display:block;
+      width:100%;
+    }
 
-    /* =========================
-       HEADER
-    ========================= */
+    section{
+      position:relative;
+    }
+
+    /* ---------------- HEADER ---------------- */
 
     header{
       position:absolute;
-      width:100%;
+      z-index:50;
       top:0;
       left:0;
-      z-index:20;
-
+      width:100%;
+      padding:28px 5.5%;
       display:flex;
       justify-content:space-between;
       align-items:center;
-
-      padding:30px 5%;
     }
 
-    .logo-area{
+    .brand{
       display:flex;
       align-items:center;
-      gap:16px;
+      gap:14px;
     }
 
-    .logo{
+    .brand-logo{
       font-family:"Cormorant Garamond", serif;
-      font-size:38px;
-      letter-spacing:7px;
+      font-size:42px;
+      letter-spacing:8px;
       font-weight:500;
     }
 
-    .logo-line{
-      width:35px;
+    .brand-line{
+      width:38px;
       height:1px;
-      background:#4c3b32;
+      background:#4b3a30;
     }
 
-    .owner{
-      font-size:10px;
-      letter-spacing:2px;
+    .brand-name{
+      font-size:9px;
       text-transform:uppercase;
-      color:#6b5a50;
+      letter-spacing:3px;
+      color:#6f5c50;
     }
 
     nav{
       display:flex;
-      gap:32px;
-      font-size:11px;
-      letter-spacing:1.8px;
+      align-items:center;
+      gap:30px;
+      font-size:10px;
+      letter-spacing:2px;
       text-transform:uppercase;
     }
 
@@ -96,423 +101,714 @@
     nav a::after{
       content:"";
       position:absolute;
-      bottom:0;
       left:0;
-      width:0;
+      bottom:0;
       height:1px;
-      background:#2b211c;
-      transition:.3s;
+      width:0;
+      background:#2c211b;
+      transition:.3s ease;
     }
 
     nav a:hover::after{
       width:100%;
     }
 
-
-    /* =========================
-       HERO
-    ========================= */
+    /* ---------------- HERO ---------------- */
 
     .hero{
       min-height:100vh;
-
       display:grid;
       grid-template-columns:52% 48%;
-
-      position:relative;
+      background:#eee7df;
       overflow:hidden;
     }
 
-
-    /* paper texture effect */
-
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-
-      background-image:
-      radial-gradient(rgba(70,50,40,.08) .6px, transparent .6px);
-
-      background-size:5px 5px;
-      opacity:.35;
-
-      pointer-events:none;
-      z-index:2;
-    }
-
-
-    /* LEFT */
-
     .hero-left{
-      padding:150px 7% 70px;
-
+      padding:150px 7% 90px;
       display:flex;
       flex-direction:column;
       justify-content:center;
-
       position:relative;
-      z-index:3;
-
-      background:#eee6dc;
     }
 
+    .hero-left::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:radial-gradient(rgba(80,55,45,.07) .7px, transparent .7px);
+      background-size:6px 6px;
+      opacity:.4;
+      pointer-events:none;
+    }
 
-    .studio-label{
+    .eyebrow{
       display:flex;
       align-items:center;
-      gap:13px;
-
+      gap:12px;
       font-size:10px;
       letter-spacing:3px;
       text-transform:uppercase;
-
-      margin-bottom:35px;
+      margin-bottom:26px;
+      position:relative;
+      z-index:2;
     }
 
-    .studio-label::before{
+    .eyebrow::before{
       content:"";
       width:55px;
       height:1px;
-      background:#6f5c50;
+      background:#675247;
     }
 
-
-    .main-title{
+    .hero-title{
       font-family:"Cormorant Garamond", serif;
+      font-size:clamp(110px,13vw,190px);
+      line-height:.72;
       font-weight:400;
-
-      line-height:.76;
       letter-spacing:-5px;
-
-      font-size:clamp(100px,12vw,180px);
+      position:relative;
+      z-index:2;
     }
 
-    .main-title span{
-      display:block;
-    }
-
-
-    .main-title .lal{
-      font-style:normal;
-    }
-
-
-    .makeup-art{
+    .hero-slogan{
       font-family:"Cormorant Garamond", serif;
-
-      font-size:clamp(48px,5vw,76px);
-
+      font-size:clamp(50px,5vw,78px);
       font-style:italic;
-      font-weight:400;
-
-      letter-spacing:-2px;
-
-      margin-top:35px;
+      line-height:.9;
+      margin-top:38px;
       margin-left:12%;
-
-      color:#573e31;
+      color:#594035;
+      position:relative;
+      z-index:2;
     }
 
-
-    .byline{
-      margin-top:20px;
+    .hero-by{
+      margin-top:18px;
       margin-left:12%;
-
-      font-size:11px;
+      font-size:10px;
       letter-spacing:4px;
       text-transform:uppercase;
-
-      color:#736055;
+      color:#766358;
+      position:relative;
+      z-index:2;
     }
 
-
     .hero-bottom{
-      margin-top:60px;
-
       display:flex;
       justify-content:space-between;
       align-items:flex-end;
-
-      gap:35px;
+      gap:30px;
+      margin-top:55px;
+      position:relative;
+      z-index:2;
     }
 
-
-    .description{
-      max-width:380px;
-
+    .hero-copy{
+      max-width:390px;
       font-size:14px;
       line-height:1.8;
-
-      color:#65564d;
+      color:#65564e;
     }
 
-
-    .buttons{
+    .hero-actions{
       display:flex;
-      gap:12px;
+      gap:10px;
       flex-shrink:0;
     }
 
-
-    .button{
-      padding:14px 23px;
-
-      border:1px solid #352820;
-
-      font-size:10px;
+    .btn{
+      padding:14px 22px;
+      border:1px solid #34271f;
+      font-size:9px;
       letter-spacing:2px;
       text-transform:uppercase;
-
-      transition:.3s;
+      transition:.3s ease;
     }
 
-
-    .button-dark{
+    .btn-dark{
       background:#34271f;
-      color:#f1e9df;
+      color:#f2e9df;
     }
 
-
-    .button-dark:hover{
-      background:#5b4639;
+    .btn-dark:hover{
+      background:#5b4638;
     }
 
-
-    .button-light:hover{
+    .btn-light:hover{
       background:#34271f;
-      color:white;
+      color:#fff;
     }
-
-
-
-    /* =========================
-       RIGHT VISUAL AREA
-    ========================= */
 
     .hero-right{
-      background:#c6ae9d;
-
       min-height:100vh;
-
       position:relative;
-
+      background:#bca494;
       overflow:hidden;
     }
 
-
-    .hero-right::after{
-      content:"";
-
+    .hero-main-img{
       position:absolute;
-      inset:0;
-
-      background:linear-gradient(
-        to bottom,
-        rgba(38,28,23,.06),
-        rgba(38,28,23,.18)
-      );
-
-      pointer-events:none;
-    }
-
-
-    /* MAIN MAKEUP IMAGE */
-
-    .makeup-image{
-      position:absolute;
-
-      width:72%;
-      height:73%;
-
-      right:0;
+      width:74%;
+      height:72%;
       top:0;
-
+      right:0;
       object-fit:cover;
-
-      filter:saturate(.75) sepia(.08);
+      filter:saturate(.78) sepia(.05);
     }
 
-
-    /* NAIL IMAGE */
-
-    .nail-card{
+    .hero-nail-card{
       position:absolute;
-
-      width:47%;
-      height:48%;
-
-      left:7%;
-      bottom:4%;
-
-      z-index:4;
-
-      background:#ddd;
+      left:6%;
+      bottom:7%;
+      width:48%;
+      height:47%;
       padding:8px;
-
+      background:#efe5db;
       transform:rotate(-2deg);
-
-      box-shadow:0 20px 50px rgba(48,33,26,.2);
+      box-shadow:0 20px 50px rgba(40,28,23,.22);
+      z-index:4;
     }
 
-
-    .nail-card img{
+    .hero-nail-card img{
       width:100%;
       height:100%;
-
       object-fit:cover;
-
       filter:saturate(.75);
     }
 
-
-    /* SMALL VINTAGE CARD */
-
-    .vintage-card{
+    .hero-note{
       position:absolute;
-
-      right:8%;
-      bottom:11%;
-
+      right:7%;
+      bottom:13%;
       width:185px;
-      height:235px;
-
-      z-index:5;
-
-      background:#f1e9df;
-
+      min-height:225px;
+      background:#f2e9df;
       padding:20px;
-
+      transform:rotate(3deg);
+      z-index:5;
       display:flex;
       flex-direction:column;
       justify-content:space-between;
-
-      transform:rotate(3deg);
-
-      box-shadow:0 10px 30px rgba(42,28,22,.15);
+      box-shadow:0 14px 35px rgba(45,30,24,.16);
     }
 
-
-    .vintage-card small{
+    .hero-note small{
       font-size:8px;
-      letter-spacing:2px;
       text-transform:uppercase;
+      letter-spacing:2px;
     }
 
-
-    .vintage-card .number{
+    .hero-note-number{
       font-family:"Cormorant Garamond", serif;
-
-      font-size:85px;
+      font-size:82px;
       line-height:.7;
-
-      color:#5d473a;
+      color:#60483b;
     }
 
-
-    .vintage-card p{
+    .hero-note p{
       font-family:"Cormorant Garamond", serif;
-
       font-style:italic;
       font-size:21px;
-
       line-height:1;
     }
 
-
-
-    /* CIRCLE */
-
-    .beauty-circle{
+    .hero-circle{
       position:absolute;
-
+      top:115px;
+      left:30px;
       width:135px;
       height:135px;
-
       border-radius:50%;
-
-      border:1px solid rgba(245,237,228,.75);
-
-      top:120px;
-      left:35px;
-
-      z-index:6;
-
+      border:1px solid rgba(255,248,241,.8);
+      color:#f7efe8;
       display:flex;
       align-items:center;
       justify-content:center;
-
       text-align:center;
-
-      color:#f5eee7;
-
       font-family:"Cormorant Garamond", serif;
       font-style:italic;
-
-      font-size:19px;
+      font-size:18px;
       line-height:1.1;
-
-      transform:rotate(-10deg);
+      transform:rotate(-9deg);
+      z-index:5;
     }
 
+    /* ---------------- MARQUEE ---------------- */
 
+    .marquee{
+      background:#342820;
+      color:#eadfd4;
+      overflow:hidden;
+      white-space:nowrap;
+      padding:17px 0;
+      border-top:1px solid rgba(255,255,255,.05);
+    }
 
-    /* vertical text */
+    .marquee-track{
+      display:inline-block;
+      min-width:200%;
+      font-family:"Cormorant Garamond", serif;
+      font-style:italic;
+      font-size:28px;
+      word-spacing:18px;
+      animation:marquee 26s linear infinite;
+    }
 
-    .vertical-text{
-      position:absolute;
+    @keyframes marquee{
+      from{transform:translateX(0)}
+      to{transform:translateX(-50%)}
+    }
 
-      right:17px;
-      top:50%;
+    /* ---------------- INTRO ---------------- */
 
-      transform:translateY(-50%) rotate(90deg);
+    .intro{
+      padding:130px 7%;
+      background:#f2ece5;
+      display:grid;
+      grid-template-columns:.7fr 1.3fr;
+      gap:70px;
+      align-items:start;
+    }
 
-      transform-origin:center;
-
-      color:#f6eee8;
-
-      z-index:6;
-
-      font-size:8px;
-
+    .section-kicker{
+      font-size:9px;
+      letter-spacing:3px;
       text-transform:uppercase;
-      letter-spacing:4px;
+      color:#77645a;
     }
 
+    .intro h2{
+      font-family:"Cormorant Garamond", serif;
+      font-size:clamp(55px,7vw,110px);
+      font-weight:400;
+      line-height:.9;
+      max-width:950px;
+    }
 
+    .intro h2 em{
+      font-weight:400;
+      color:#725446;
+    }
 
-    /* =========================
-       BOTTOM BAR
-    ========================= */
+    .intro-copy{
+      margin-top:40px;
+      max-width:580px;
+      font-size:15px;
+      line-height:1.9;
+      color:#65564f;
+    }
 
-    .bottom-strip{
-      position:absolute;
+    /* ---------------- SERVICES ---------------- */
 
-      bottom:0;
-      left:0;
+    .services{
+      padding:120px 6%;
+      background:#d8c3b4;
+    }
 
-      width:52%;
-
-      padding:18px 7%;
-
-      background:#3b2d25;
-      color:#e9ddd3;
-
-      z-index:8;
-
+    .section-head{
       display:flex;
       justify-content:space-between;
-
-      font-size:9px;
-      text-transform:uppercase;
-
-      letter-spacing:2px;
+      align-items:flex-end;
+      gap:30px;
+      margin-bottom:70px;
     }
 
+    .section-head h2{
+      font-family:"Cormorant Garamond", serif;
+      font-weight:400;
+      font-size:clamp(60px,7vw,105px);
+      line-height:.86;
+    }
 
-    /* =========================
-       MOBILE
-    ========================= */
+    .section-head p{
+      max-width:340px;
+      font-size:13px;
+      line-height:1.8;
+      color:#635148;
+    }
+
+    .service-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    .service-card{
+      min-height:680px;
+      position:relative;
+      overflow:hidden;
+      background:#cab2a1;
+    }
+
+    .service-card img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .8s ease;
+      filter:saturate(.82);
+    }
+
+    .service-card:hover img{
+      transform:scale(1.035);
+    }
+
+    .service-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(29,20,16,.72), rgba(29,20,16,.05) 65%);
+    }
+
+    .service-content{
+      position:absolute;
+      z-index:3;
+      left:38px;
+      right:38px;
+      bottom:36px;
+      color:#fff8f1;
+    }
+
+    .service-no{
+      font-size:9px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+    }
+
+    .service-title{
+      font-family:"Cormorant Garamond", serif;
+      font-size:68px;
+      font-weight:400;
+      margin:8px 0 12px;
+    }
+
+    .service-text{
+      max-width:390px;
+      font-size:13px;
+      line-height:1.7;
+      opacity:.9;
+    }
+
+    /* ---------------- NAIL FEATURE ---------------- */
+
+    .feature{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      min-height:800px;
+      background:#eee5dc;
+    }
+
+    .feature-image{
+      min-height:800px;
+      overflow:hidden;
+    }
+
+    .feature-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:saturate(.78);
+    }
+
+    .feature-copy{
+      padding:90px 9%;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .feature-copy h3{
+      font-family:"Cormorant Garamond", serif;
+      font-size:clamp(65px,7vw,110px);
+      font-weight:400;
+      line-height:.85;
+      margin:25px 0 35px;
+    }
+
+    .feature-copy h3 em{
+      font-weight:400;
+    }
+
+    .feature-copy p{
+      max-width:500px;
+      font-size:15px;
+      line-height:1.9;
+      color:#665750;
+    }
+
+    .feature-list{
+      margin-top:38px;
+      border-top:1px solid rgba(72,52,42,.25);
+    }
+
+    .feature-row{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      padding:16px 0;
+      border-bottom:1px solid rgba(72,52,42,.25);
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:1.5px;
+    }
+
+    /* ---------------- MAKEUP FEATURE ---------------- */
+
+    .feature.reverse{
+      grid-template-columns:.95fr 1.05fr;
+      background:#3a2d25;
+      color:#f3e9df;
+    }
+
+    .feature.reverse .feature-copy{
+      order:1;
+    }
+
+    .feature.reverse .feature-image{
+      order:2;
+    }
+
+    .feature.reverse .feature-copy p{
+      color:#cdbdb1;
+    }
+
+    .feature.reverse .feature-list{
+      border-top-color:rgba(255,255,255,.16);
+    }
+
+    .feature.reverse .feature-row{
+      border-bottom-color:rgba(255,255,255,.16);
+    }
+
+    /* ---------------- ABOUT ---------------- */
+
+    .about{
+      padding:130px 7%;
+      background:#c6aa98;
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .about-collage{
+      min-height:650px;
+      position:relative;
+    }
+
+    .about-img-1{
+      width:72%;
+      height:560px;
+      object-fit:cover;
+      position:absolute;
+      left:0;
+      top:0;
+      filter:saturate(.78);
+    }
+
+    .about-img-2{
+      width:47%;
+      height:360px;
+      object-fit:cover;
+      position:absolute;
+      right:0;
+      bottom:0;
+      border:8px solid #eaddd1;
+      transform:rotate(2deg);
+      filter:saturate(.8);
+    }
+
+    .about-note{
+      position:absolute;
+      left:7%;
+      bottom:3%;
+      background:#f0e5da;
+      padding:20px 24px;
+      font-family:"Cormorant Garamond", serif;
+      font-style:italic;
+      font-size:20px;
+      transform:rotate(-2deg);
+      box-shadow:0 10px 28px rgba(48,32,25,.13);
+    }
+
+    .about-copy h2{
+      font-family:"Cormorant Garamond", serif;
+      font-size:clamp(70px,8vw,120px);
+      font-weight:400;
+      line-height:.8;
+      margin:25px 0 40px;
+    }
+
+    .about-copy .signature{
+      font-family:"Cormorant Garamond", serif;
+      font-style:italic;
+      font-size:34px;
+      margin-top:30px;
+      color:#5e4639;
+    }
+
+    .about-copy p{
+      font-size:15px;
+      line-height:1.9;
+      max-width:560px;
+      color:#594a43;
+    }
+
+    /* ---------------- GALLERY ---------------- */
+
+    .gallery{
+      padding:120px 6%;
+      background:#f1ebe4;
+    }
+
+    .gallery-grid{
+      margin-top:65px;
+      display:grid;
+      grid-template-columns:1.05fr .65fr .9fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .gallery-item{
+      overflow:hidden;
+      background:#ddd;
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .7s ease;
+      filter:saturate(.8);
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.03);
+    }
+
+    .g1{height:570px;}
+    .g2{height:390px; margin-top:90px;}
+    .g3{height:510px;}
+
+    /* ---------------- QUOTE ---------------- */
+
+    .quote{
+      padding:145px 7%;
+      background:#7b5c49;
+      color:#f6eee7;
+      text-align:center;
+    }
+
+    .quote small{
+      font-size:9px;
+      letter-spacing:4px;
+      text-transform:uppercase;
+    }
+
+    .quote h2{
+      margin:28px auto 0;
+      max-width:1000px;
+      font-family:"Cormorant Garamond", serif;
+      font-style:italic;
+      font-weight:400;
+      font-size:clamp(60px,8vw,115px);
+      line-height:.9;
+    }
+
+    /* ---------------- BOOKING ---------------- */
+
+    .booking{
+      min-height:650px;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      background:#e8ddd3;
+    }
+
+    .booking-left{
+      padding:100px 7%;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .booking-left h2{
+      font-family:"Cormorant Garamond", serif;
+      font-size:clamp(75px,9vw,135px);
+      font-weight:400;
+      line-height:.8;
+      margin:25px 0 35px;
+    }
+
+    .booking-left p{
+      max-width:520px;
+      font-size:15px;
+      line-height:1.9;
+      color:#62534b;
+      margin-bottom:35px;
+    }
+
+    .booking-card{
+      background:#352820;
+      color:#f4eae1;
+      padding:70px 12%;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .booking-card h3{
+      font-family:"Cormorant Garamond", serif;
+      font-size:50px;
+      font-weight:400;
+      margin-bottom:30px;
+    }
+
+    .contact-row{
+      padding:18px 0;
+      border-bottom:1px solid rgba(255,255,255,.14);
+    }
+
+    .contact-row small{
+      display:block;
+      font-size:8px;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      color:#bcaea4;
+      margin-bottom:6px;
+    }
+
+    .contact-row span{
+      font-size:14px;
+    }
+
+    .booking-card .btn{
+      margin-top:35px;
+      border-color:#f4eae1;
+      display:inline-block;
+      align-self:flex-start;
+    }
+
+    .booking-card .btn:hover{
+      background:#f4eae1;
+      color:#352820;
+    }
+
+    /* ---------------- FOOTER ---------------- */
+
+    footer{
+      background:#241b17;
+      color:#bbaea5;
+      padding:28px 6%;
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      font-size:8px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+    }
+
+    /* ---------------- MOBILE ---------------- */
 
     @media(max-width:900px){
 
@@ -524,8 +820,8 @@
         display:none;
       }
 
-      .owner,
-      .logo-line{
+      .brand-line,
+      .brand-name{
         display:none;
       }
 
@@ -534,20 +830,20 @@
       }
 
       .hero-left{
-        min-height:90vh;
-        padding:140px 25px 100px;
+        min-height:88vh;
+        padding:140px 25px 80px;
       }
 
-      .main-title{
-        font-size:105px;
+      .hero-title{
+        font-size:110px;
       }
 
-      .makeup-art{
+      .hero-slogan{
         margin-left:0;
         font-size:50px;
       }
 
-      .byline{
+      .hero-by{
         margin-left:0;
       }
 
@@ -555,223 +851,593 @@
         display:block;
       }
 
-      .buttons{
+      .hero-actions{
         margin-top:30px;
       }
 
       .hero-right{
-        min-height:750px;
+        min-height:720px;
       }
 
-      .makeup-image{
+      .hero-main-img{
         width:88%;
-        height:65%;
+        height:64%;
       }
 
-      .nail-card{
-        width:58%;
-        height:44%;
-        left:4%;
+      .hero-nail-card{
+        width:60%;
+        height:43%;
       }
 
-      .vintage-card{
-        width:150px;
-        height:190px;
+      .hero-note{
+        width:145px;
+        min-height:180px;
       }
 
-      .vintage-card .number{
-        font-size:65px;
+      .hero-note-number{
+        font-size:60px;
       }
 
-      .bottom-strip{
-        position:relative;
-        width:100%;
+      .intro{
+        grid-template-columns:1fr;
+        padding:90px 25px;
+      }
+
+      .service-grid{
+        grid-template-columns:1fr;
+      }
+
+      .service-card{
+        min-height:520px;
+      }
+
+      .section-head{
+        display:block;
+      }
+
+      .section-head p{
+        margin-top:25px;
+      }
+
+      .feature,
+      .feature.reverse{
+        grid-template-columns:1fr;
+      }
+
+      .feature-image{
+        min-height:520px;
+      }
+
+      .feature-copy{
+        padding:80px 28px;
+      }
+
+      .feature.reverse .feature-copy{
+        order:2;
+      }
+
+      .feature.reverse .feature-image{
+        order:1;
+      }
+
+      .about{
+        grid-template-columns:1fr;
+        padding:90px 25px;
+      }
+
+      .about-collage{
+        min-height:570px;
+      }
+
+      .gallery-grid{
+        grid-template-columns:1fr;
+      }
+
+      .g1,.g2,.g3{
+        height:480px;
+        margin-top:0;
+      }
+
+      .booking{
+        grid-template-columns:1fr;
+      }
+
+      .booking-left{
+        padding:90px 28px;
+      }
+
+      footer{
+        display:block;
+        line-height:2;
       }
 
     }
 
   </style>
-
 </head>
 
 <body>
 
-
 <header>
 
-  <div class="logo-area">
-
-    <div class="logo">
-      LAL
-    </div>
-
-    <div class="logo-line"></div>
-
-    <div class="owner">
-      Aleyna Somuncu
-    </div>
-
+  <div class="brand">
+    <div class="brand-logo">LAL</div>
+    <div class="brand-line"></div>
+    <div class="brand-name">Aleyna Somuncu</div>
   </div>
 
-
   <nav>
-
-    <a href="#hizmetler">
-      Hizmetler
-    </a>
-
-    <a href="#lal">
-      LAL
-    </a>
-
-    <a href="#randevu">
-      Randevu
-    </a>
-
+    <a href="#hizmetler">Hizmetler</a>
+    <a href="#nail">Nail</a>
+    <a href="#makeup">Makeup</a>
+    <a href="#lal">LAL</a>
+    <a href="#randevu">Randevu</a>
   </nav>
 
 </header>
 
 
+<section class="hero">
 
-<main class="hero">
+  <div class="hero-left">
 
-
-  <!-- LEFT -->
-
-  <section class="hero-left">
-
-    <div class="studio-label">
+    <div class="eyebrow">
       Nail & Makeup Studio
     </div>
 
-
-    <h1 class="main-title">
-
-      <span class="lal">
-        LAL
-      </span>
-
+    <h1 class="hero-title">
+      LAL
     </h1>
 
-
-    <div class="makeup-art">
+    <div class="hero-slogan">
       Makeup is my art.
     </div>
 
-
-    <div class="byline">
+    <div class="hero-by">
       by Aleyna Somuncu
     </div>
 
-
     <div class="hero-bottom">
 
-
-      <p class="description">
-
-        Makyajın ve tırnak tasarımının
-        kişisel bir ifadeye dönüştüğü beauty studio.
-
-        LAL'da her görünüm,
-        sana ait bir detayla tamamlanır.
-
+      <p class="hero-copy">
+        Makyajın ve tırnak tasarımının kişisel bir ifadeye dönüştüğü
+        beauty studio. LAL'da her görünüm, sana ait bir detayla tamamlanır.
       </p>
 
-
-      <div class="buttons">
-
-        <a href="#hizmetler" class="button button-dark">
-          Hizmetler
-        </a>
-
-        <a href="#randevu" class="button button-light">
-          Randevu
-        </a>
-
+      <div class="hero-actions">
+        <a href="#hizmetler" class="btn btn-dark">Hizmetler</a>
+        <a href="#randevu" class="btn btn-light">Randevu</a>
       </div>
 
-
     </div>
-
-  </section>
-
-
-
-  <!-- RIGHT -->
-
-  <section class="hero-right">
-
-
-    <img
-      class="makeup-image"
-      src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1500&q=90"
-      alt="LAL Makeup Studio"
-    >
-
-
-    <div class="beauty-circle">
-      your beauty<br>
-      your rules
-    </div>
-
-
-    <div class="nail-card">
-
-      <img
-        src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1200&q=90"
-        alt="LAL Nail Studio"
-      >
-
-    </div>
-
-
-    <div class="vintage-card">
-
-      <small>
-        LAL Beauty Notes
-      </small>
-
-      <div class="number">
-        01
-      </div>
-
-      <p>
-        made to feel<br>
-        like you.
-      </p>
-
-    </div>
-
-
-    <div class="vertical-text">
-      Makeup · Nails · Beauty · LAL
-    </div>
-
-
-  </section>
-
-
-
-  <div class="bottom-strip">
-
-    <span>
-      Nail Studio
-    </span>
-
-    <span>
-      Makeup Studio
-    </span>
-
-    <span>
-      Aleyna Somuncu
-    </span>
 
   </div>
 
 
-</main>
+  <div class="hero-right">
 
+    <img
+      class="hero-main-img"
+      src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1600&q=90"
+      alt="LAL Makeup"
+    >
+
+    <div class="hero-circle">
+      your beauty<br>
+      your rules
+    </div>
+
+    <div class="hero-nail-card">
+      <img
+        src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1200&q=90"
+        alt="LAL Nail"
+      >
+    </div>
+
+    <div class="hero-note">
+      <small>LAL beauty notes</small>
+      <div class="hero-note-number">01</div>
+      <p>made to feel<br>like you.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="marquee">
+  <div class="marquee-track">
+    Makeup is my art · Nail Studio · Beauty · LAL · Aleyna Somuncu ·
+    Makeup is my art · Nail Studio · Beauty · LAL · Aleyna Somuncu ·
+  </div>
+</div>
+
+
+<section class="intro">
+
+  <div>
+    <div class="section-kicker">
+      Welcome to LAL
+    </div>
+  </div>
+
+  <div>
+    <h2>
+      Güzellik bir kalıp değil,
+      <em>kişisel bir ifade.</em>
+    </h2>
+
+    <p class="intro-copy">
+      LAL; makyaj ve protez tırnağı yalnızca bir uygulama olarak değil,
+      kişisel stilin bir parçası olarak ele alan beauty studio.
+      Her detay, seni değiştirmek için değil; seni daha çok sen yapmak için.
+    </p>
+  </div>
+
+</section>
+
+
+<section class="services" id="hizmetler">
+
+  <div class="section-head">
+
+    <div>
+      <div class="section-kicker">Our services</div>
+
+      <h2>
+        İki alan.<br>
+        Tek ifade.
+      </h2>
+    </div>
+
+    <p>
+      Nail ve makeup uygulamaları aynı estetik anlayışta buluşur.
+      Her görünüm kişiye özel düşünülür.
+    </p>
+
+  </div>
+
+
+  <div class="service-grid">
+
+    <article class="service-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=1600&q=90"
+        alt="Protez tırnak"
+      >
+
+      <div class="service-content">
+        <div class="service-no">01 / Nail</div>
+        <h3 class="service-title">Nail Studio</h3>
+        <p class="service-text">
+          Protez tırnak, kalıcı oje ve kişisel nail tasarımları.
+          Klasikten karakterli detaylara kadar sana ait bir görünüm.
+        </p>
+      </div>
+
+    </article>
+
+
+    <article class="service-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1600&q=90"
+        alt="Makyaj"
+      >
+
+      <div class="service-content">
+        <div class="service-no">02 / Makeup</div>
+        <h3 class="service-title">Makeup</h3>
+        <p class="service-text">
+          Özel gün, davet ve kişisel makeup uygulamaları.
+          Amaç başka biri olmak değil; kendi ifadenin altını çizmek.
+        </p>
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<section class="feature" id="nail">
+
+  <div class="feature-image">
+    <img
+      src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&fit=crop&w=1600&q=90"
+      alt="LAL Nail Studio"
+    >
+  </div>
+
+  <div class="feature-copy">
+
+    <div class="section-kicker">
+      01 / Nail Studio
+    </div>
+
+    <h3>
+      Details<br>
+      <em>matter.</em>
+    </h3>
+
+    <p>
+      Nail tasarımı küçük bir detay gibi görünür.
+      Ama stilin tamamını değiştirebilir.
+      LAL'da uygulama; el yapına, tarzına ve istediğin hissiyata göre şekillenir.
+    </p>
+
+    <div class="feature-list">
+
+      <div class="feature-row">
+        <span>Protez Tırnak</span>
+        <span>01</span>
+      </div>
+
+      <div class="feature-row">
+        <span>Kalıcı Oje</span>
+        <span>02</span>
+      </div>
+
+      <div class="feature-row">
+        <span>Nail Art</span>
+        <span>03</span>
+      </div>
+
+      <div class="feature-row">
+        <span>Bakım</span>
+        <span>04</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="feature reverse" id="makeup">
+
+  <div class="feature-copy">
+
+    <div class="section-kicker">
+      02 / Makeup Studio
+    </div>
+
+    <h3>
+      Makeup is<br>
+      <em>my art.</em>
+    </h3>
+
+    <p>
+      Makyaj LAL için bir maske değil, bir ifade biçimi.
+      Ten, göz, doku ve renkler birlikte düşünülür.
+      Sonuç; seni değiştirmeyen ama seni daha güçlü gösteren bir görünüm.
+    </p>
+
+    <div class="feature-list">
+
+      <div class="feature-row">
+        <span>Özel Gün Makyajı</span>
+        <span>01</span>
+      </div>
+
+      <div class="feature-row">
+        <span>Davet Makyajı</span>
+        <span>02</span>
+      </div>
+
+      <div class="feature-row">
+        <span>Soft Glam</span>
+        <span>03</span>
+      </div>
+
+      <div class="feature-row">
+        <span>Editorial Look</span>
+        <span>04</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="feature-image">
+    <img
+      src="https://images.unsplash.com/photo-1515688594390-b649af70d282?auto=format&fit=crop&w=1600&q=90"
+      alt="LAL Makeup Studio"
+    >
+  </div>
+
+</section>
+
+
+<section class="about" id="lal">
+
+  <div class="about-collage">
+
+    <img
+      class="about-img-1"
+      src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=1400&q=90"
+      alt="LAL Studio"
+    >
+
+    <img
+      class="about-img-2"
+      src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=1000&q=90"
+      alt="LAL Beauty"
+    >
+
+    <div class="about-note">
+      Beauty, but make it yours.
+    </div>
+
+  </div>
+
+
+  <div class="about-copy">
+
+    <div class="section-kicker">
+      This is LAL
+    </div>
+
+    <h2>
+      LAL<br>
+      Studio
+    </h2>
+
+    <p>
+      LAL, Aleyna Somuncu'nun beauty dünyasına bakışını taşıyan bir stüdyo.
+      Burada güzellik tek bir trende ya da tek bir görünüme bağlı değil.
+      <br><br>
+      Amaç; seni başka biri yapmak değil.
+      Kendi tarzını, kendi detaylarını ve kendini ifade etme biçimini
+      görünür hale getirmek.
+    </p>
+
+    <div class="signature">
+      Aleyna Somuncu
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="gallery">
+
+  <div class="section-head">
+
+    <div>
+      <div class="section-kicker">LAL mood</div>
+      <h2>
+        Beauty<br>
+        archive.
+      </h2>
+    </div>
+
+    <p>
+      Nail, makeup, detaylar ve LAL'ın görsel dünyasından seçilmiş kareler.
+    </p>
+
+  </div>
+
+
+  <div class="gallery-grid">
+
+    <div class="gallery-item g1">
+      <img
+        src="https://images.unsplash.com/photo-1604902396830-aca29e19b067?auto=format&fit=crop&w=1300&q=90"
+        alt="Beauty"
+      >
+    </div>
+
+    <div class="gallery-item g2">
+      <img
+        src="https://images.unsplash.com/photo-1583001809873-a128495da465?auto=format&fit=crop&w=1000&q=90"
+        alt="Nail detail"
+      >
+    </div>
+
+    <div class="gallery-item g3">
+      <img
+        src="https://images.unsplash.com/photo-1503236823255-94609f598e71?auto=format&fit=crop&w=1200&q=90"
+        alt="Makeup detail"
+      >
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="quote">
+
+  <small>
+    LAL Manifesto
+  </small>
+
+  <h2>
+    “Beauty is not a rule.<br>
+    It is your language.”
+  </h2>
+
+</section>
+
+
+<section class="booking" id="randevu">
+
+  <div class="booking-left">
+
+    <div class="section-kicker">
+      Book your LAL moment
+    </div>
+
+    <h2>
+      Randevu<br>
+      zamanı.
+    </h2>
+
+    <p>
+      Nail veya makeup uygulaması için randevu oluşturmak,
+      hizmet detaylarını öğrenmek ya da uygun saatleri sormak için
+      LAL ile iletişime geçebilirsin.
+    </p>
+
+    <div>
+      <a href="https://instagram.com/" target="_blank" class="btn btn-dark">
+        Instagram
+      </a>
+    </div>
+
+  </div>
+
+
+  <div class="booking-card">
+
+    <h3>
+      Contact
+    </h3>
+
+    <div class="contact-row">
+      <small>Instagram</small>
+      <span>@lalstudio</span>
+    </div>
+
+    <div class="contact-row">
+      <small>Studio</small>
+      <span>Nail & Makeup</span>
+    </div>
+
+    <div class="contact-row">
+      <small>Founder</small>
+      <span>Aleyna Somuncu</span>
+    </div>
+
+    <a href="https://instagram.com/" target="_blank" class="btn">
+      Randevu oluştur
+    </a>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <div>
+    © 2026 LAL Studio
+  </div>
+
+  <div>
+    Nail · Makeup · Beauty
+  </div>
+
+  <div>
+    Aleyna Somuncu
+  </div>
+
+</footer>
 
 </body>
 </html>
